@@ -74,6 +74,23 @@ const projects = [
     tag: "Internal",
     github: "https://github.com/devendramaharshi005/EazyRBAC",
   },
+  {
+    title: "Portfolio Website",
+    description:
+      "A personal portfolio website built with Next.js and TypeScript to showcase projects, skills, and experience. The website is fully responsive and features modern design practices using Tailwind CSS. It is deployed using Vercel for fast performance and continuous deployment.",
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Git",
+      "Vercel",
+      "Node.js",
+    ],
+    image:
+      "https://github.com/devendramaharshi005/portfolio-website/raw/master/portfolio-screenshot.png",
+    tag: "Internal",
+    github: "https://github.com/devendramaharshi005/portfolio-website",
+  },
 ];
 
 export default function Projects() {
