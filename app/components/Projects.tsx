@@ -97,16 +97,16 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="pt-[120px] pb-24 flex flex-col items-center"
+      className="px-4 sm:px-16 pt-[120px] pb-24 flex flex-col items-center"
     >
       <div className="flex flex-col items-center justify-between mb-8 gap-4">
         <h2 className="text-3xl font-bold  text-foreground">Projects</h2>
         {/* Info Icon with Tooltip */}
-        <div className="flex items-center text-foreground/60 text-sm">
+        <div className="flex items-center text-foreground/60 text-sm gap-1">
           <Info size={16} className="mr-1" />
-          <span className="hidden sm:inline">
-            Internal: Source code is available. External: No public repository.
-          </span>
+          <span className="whitespace-pre-line sm:whitespace-normal">
+          {"Internal: Source code is available.\nExternal: No public repository."}
+        </span>
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

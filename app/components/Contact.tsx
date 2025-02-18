@@ -38,7 +38,7 @@ export default function Contact() {
       <h2 className="text-3xl font-bold mb-8 text-primary">Contact Me</h2>
 
       {/* Form Wrapper */}
-      <div className="relative w-full max-w-lg min-w-[300px]">
+      <div className="relative w-full max-w-lg min-w-[300px] px-4">
         {/* Form */}
         <form className="w-full">
           <div className="mb-4">

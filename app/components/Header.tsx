@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <header className="w-full fixed top-4 left-0 right-0 z-40 px-4">
       <nav className="max-w-2xl mx-auto">
-        <div className="bg-background rounded-full border border-muted/80 px-4 py-3 flex items-center justify-between">
+        <div className="bg-background rounded-full border border-muted/80 px-4 pr-10 py-3 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="h-8 w-8 rounded-full bg-muted border border-accent/80 overflow-hidden">
               <Image
@@ -18,7 +18,7 @@ export default function Header() {
                 priority
               />
             </div>
-            <span className="font-medium text-foreground">
+            <span className="font-medium text-foreground hidden md:block">
               Devendra Maharshi
             </span>
           </div>
