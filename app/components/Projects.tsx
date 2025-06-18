@@ -91,6 +91,56 @@ const projects = [
     tag: "Internal",
     github: "https://github.com/devendramaharshi005/portfolio-website",
   },
+  {
+    title: "Outbound Calling AI Agent",
+    description:
+      "A full-stack intelligent outbound calling system that makes automated SIP-based calls for appointment reminders and customer engagement. The AI agent uses advanced speech-to-text, text-to-speech, and large language models to conduct natural conversations with customers. Features include real-time call monitoring, transcript streaming, and seamless human transfer capabilities. Built with LiveKit Agents for scalable voice communication, FastAPI for robust backend services, and React for an intuitive admin dashboard.",
+    technologies: [
+      "LiveKit",
+      "FastAPI",
+      "React",
+      "Python",
+      "Node.js",
+      "AssemblyAI",
+      "ElevenLabs",
+      "Google Gemini",
+      "Twilio SIP",
+      "WebSocket",
+      "Tailwind CSS",
+      "Vite",
+    ],
+    image:
+      "https://github.com/devendramaharshi005/Outbound-calling-ai-agent/blob/main/Screenshot_agent.png?raw=true",
+    tag: "Internal",
+    github: "https://github.com/devendramaharshi005/Outbound-calling-ai-agent",
+  },
+  {
+    title: "Video MCQ Generator",
+    description:
+      "An AI-powered full-stack application that automatically converts educational videos and podcasts into multiple-choice questions (MCQs) using advanced transcript generation and LLM-based question synthesis. The system extracts audio from videos, generates accurate transcripts using AssemblyAI, and creates contextual MCQs using local LLM models via Ollama. Features include real-time processing, MongoDB storage for transcripts and questions, and a modern React dashboard for managing the entire workflow from video upload to MCQ generation.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Vite",
+      "Tailwind CSS",
+      "Shadcn/ui",
+      "Node.js",
+      "Express",
+      "FastAPI",
+      "MongoDB",
+      "Mongoose",
+      "AssemblyAI",
+      "Ollama",
+      "LLaMA",
+      "Docker",
+      "Axios",
+      "React Query",
+    ],
+    image:
+      "https://img.youtube.com/vi/yAoZFxEk56c/0.jpg",
+    tag: "Internal",
+    github: "https://github.com/devendramaharshi005/Video_mcq_generator",
+  },
 ];
 
 export default function Projects() {
@@ -105,8 +155,10 @@ export default function Projects() {
         <div className="flex items-center text-foreground/60 text-sm gap-1">
           <Info size={16} className="mr-1" />
           <span className="whitespace-pre-line sm:whitespace-normal">
-          {"Internal: Source code is available.\nExternal: No public repository."}
-        </span>
+            {
+              "Internal: Source code is available.\nExternal: No public repository."
+            }
+          </span>
         </div>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
