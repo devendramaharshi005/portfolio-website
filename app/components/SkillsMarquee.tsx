@@ -85,7 +85,7 @@ const skills = [
 
 const SkillsMarquee = () => {
   return (
-    <div className="w-full overflow-hidden bg-transparent py-12 border-y border-border/40">
+    <div className="w-full h-full overflow-hidden bg-transparent py-12 border-y border-border/40">
       <div className="flex gap-8 animate-scroll whitespace-nowrap">
         {skills.map((skill, index) => (
           <div

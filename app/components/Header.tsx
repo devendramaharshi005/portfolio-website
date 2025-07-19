@@ -5,26 +5,32 @@ import Image from "next/image";
 export default function Header() {
   return (
     <header className="w-full fixed top-4 left-0 right-0 z-40 px-4">
-      <nav className="max-w-2xl mx-auto">
-        <div className="bg-background rounded-full border border-muted/80 px-4 pr-10 py-3 flex items-center justify-between">
+      <nav className="max-w-xl mx-auto">
+        <div className="bg-background hover:shadow-sm shadow-xs rounded-full border border-muted/80 px-3 py-2 flex items-center justify-between">
+           <Link href="#first" className="cursor-pointer">
           <div className="flex items-center gap-2">
-            <div className="h-8 w-8 rounded-full bg-muted border border-accent/80 overflow-hidden">
-              <Image
-                src={profile}
-                alt="Profile"
-                width={450}
-                height={550}
-                className="h-full w-full object-cover zoom-in-50"
-                priority
-              />
-            </div>
-            <span className="font-medium text-foreground hidden md:block">
+          
+              <div className="h-8 w-8 rounded-full bg-muted border border-accent/80 overflow-hidden">
+                <Image
+                  src={profile}
+                  alt="Profile"
+                  width={450}
+                  height={550}
+                  className="h-full w-full object-cover scale-150 origin-top transition-transform duration-500 ease-in-out"
+                  priority
+                />
+              </div>
+           
+
+            <span className="font-medium text-foreground text-[0.94rem] ">
               Devendra Maharshi
             </span>
+
           </div>
+          </Link>
 
           {/* Navigation Links */}
-          <ul className="flex items-center gap-6">
+          <ul className="flex items-center md:gap-6 gap-3">
             <li>
               <Link
                 href="#projects"
@@ -45,7 +51,7 @@ export default function Header() {
             <li>
               <Link
                 href="#contact"
-                className="text-accent-foreground hover:text-foreground text-sm bg-accent hover:bg-accent/80 px-4 py-1.5 rounded-full transition-colors"
+                className="text-accent-foreground flex flex-row text-center hover:text-foreground text-xs bg-accent hover:bg-accent/80 px-4 py-1.5 rounded-full transition-colors"
               >
                 Contact Me
               </Link>

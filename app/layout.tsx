@@ -21,7 +21,7 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="fixed top-4 right-4 z-50">
+          <div className="fixed md:top-4 bottom-[3rem] md:right-4 right-[2rem] z-50 ">
             <ModeToggle />
           </div>
           {children}

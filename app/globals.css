@@ -2,11 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
 
 body {
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+html {
+  font-size: clamp(12px, 0.8vw + 0.4rem, 14px);
 }
 
 @layer utilities {
