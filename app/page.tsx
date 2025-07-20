@@ -4,6 +4,7 @@ import Projects from "./components/Projects";
 import Contact from "./components/Contact";
 import SocialLinks from "./components/SocialLinks";
 import First from "./components/First";
+import { Toaster } from "@/components/ui/toaster";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <Contact />
         <SocialLinks />
       </div>
+      <Toaster />
     </main>
   );
 }

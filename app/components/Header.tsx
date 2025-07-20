@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <header className="w-full fixed top-4 left-0 right-0 z-40 px-4">
       <nav className="max-w-xl mx-auto">
-        <div className="bg-background hover:shadow-sm shadow-xs rounded-full border border-muted/80 px-3 py-2 flex items-center justify-between">
+        <div className="bg-background hover:shadow-md shadow-sm rounded-full border border-muted/80 px-3 py-2 flex items-center justify-between">
            <Link href="#first" className="cursor-pointer">
           <div className="flex items-center gap-2">
           
@@ -51,7 +51,7 @@ export default function Header() {
             <li>
               <Link
                 href="#contact"
-                className="text-accent-foreground flex flex-row text-center hover:text-foreground text-xs bg-accent hover:bg-accent/80 px-4 py-1.5 rounded-full transition-colors"
+                className="text-accent-foreground shadow-sm flex flex-row text-center hover:text-foreground text-xs bg-accent hover:bg-accent/80 px-4 py-1.5 rounded-full transition-colors"
               >
                 Contact Me
               </Link>

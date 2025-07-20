@@ -1,5 +1,7 @@
+"use client";
 import { Info, Tag } from "lucide-react";
 import Link from "next/link";
+import { useState } from "react";
 
 const projects = [
   {
@@ -136,14 +138,37 @@ const projects = [
       "Axios",
       "React Query",
     ],
-    image:
-      "https://img.youtube.com/vi/yAoZFxEk56c/0.jpg",
+    image: "https://img.youtube.com/vi/yAoZFxEk56c/0.jpg",
     tag: "Internal",
     github: "https://github.com/devendramaharshi005/Video_mcq_generator",
+  },
+  {
+    title: "Automation Builder",
+    description:
+      "A low-code visual automation builder that lets users create workflows using draggable nodes and configurable edges. Built with React Flow and Zustand, it supports live node editing, smart edge connections, undo/redo, JSON import/export, and persistent local storage. Designed as a modular playground for building complex flow-based logic with a real-time configuration panel.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "React Flow",
+      "Zustand",
+      "Tailwind CSS",
+      "Lucide React",
+      "Vite",
+    ],
+    image:
+      "https://camo.githubusercontent.com/da25f4b64cd5a4aae33ed4eb50a9626209e3d2513b3694dbf831863f91ff14f2/68747470733a2f2f696d672e796f75747562652e636f6d2f76692f6144646f6a6951485163302f687164656661756c742e6a7067",
+    tag: "Internal",
+    github: "https://github.com/devendramaharshi005/DragNBuild",
   },
 ];
 
 export default function Projects() {
+  const [expanded, setExpanded] = useState<number | null>(null);
+
+  const toggleExpand = (index: number) => {
+    setExpanded(expanded === index ? null : index);
+  };
+
   return (
     <section
       id="projects"
@@ -151,7 +176,6 @@ export default function Projects() {
     >
       <div className="flex flex-col items-center justify-between mb-8 gap-4">
         <h2 className="text-3xl font-bold  text-foreground">Projects</h2>
-        {/* Info Icon with Tooltip */}
         <div className="flex items-center text-foreground/60 text-sm gap-1">
           <Info size={16} className="mr-1" />
           <span className="whitespace-pre-line sm:whitespace-normal">
@@ -161,52 +185,83 @@ export default function Projects() {
           </span>
         </div>
       </div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {projects.map((project, index) => (
-          <div
-            key={index}
-            className="bg-background shadow-lg rounded-xl overflow-hidden relative border border-border"
-          >
-            {/* Internal Project Tag */}
-            {
+        {projects.map((project, index) => {
+          const isExpanded = expanded === index;
+          const shortDesc =
+            project.description.length > 300
+              ? project.description.slice(0, 300) + "..."
+              : project.description;
+          const visibleDesc = isExpanded ? project.description : shortDesc;
+          const visibleTech = isExpanded
+            ? project.technologies
+            : project.technologies.slice(0, 6);
+
+          return (
+            <div
+              key={index}
+              className="bg-background min-h-[25rem]  shadow-md rounded-xl overflow-hidden relative border border-border transform transition-all duration-300 hover:scale-[1.02] hover:shadow-lg"
+            >
+              {/* Tag */}
               <span className="absolute top-2 right-2 bg-primary/80 text-background text-xs px-2 py-1 rounded flex items-center">
                 <Tag size={12} className="mr-1" />
                 {project.tag}
               </span>
-            }
-            <img
-              src={project.image}
-              alt={project.title}
-              className="w-full h-40 object-cover"
-            />
-            <div className="p-4">
-              <h3 className="text-xl font-semibold text-foreground">
-                {project.title}
-              </h3>
-              <p className="text-foreground/80">{project.description}</p>
-              <div className="flex flex-wrap gap-2 mt-2">
-                {project.technologies.map((tech, i) => (
-                  <span
-                    key={i}
-                    className="text-xs bg-accent/50 text-foreground/90 px-2 py-1 rounded"
-                  >
-                    {tech}
-                  </span>
-                ))}
+
+              {/* Image */}
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-40 object-cover"
+              />
+
+              {/* Content */}
+              <div className="p-4">
+                <h3 className="text-xl font-semibold text-foreground">
+                  {project.title}
+                </h3>
+                <p className="text-foreground/80">{visibleDesc}</p>
+
+                {/* Technologies */}
+                <div className="flex flex-wrap gap-2 mt-2">
+                  {visibleTech.map((tech, i) => (
+                    <span
+                      key={i}
+                      className="text-xs bg-accent/50 text-foreground/90 px-2 py-1 rounded"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <div className=" flex flex-row flex-1 justify-between items-center transition-[max-height] duration-500 ease-in-out">
+                  {/* Toggle Button */}
+                  {project.description.length > 250 ||
+                  project.technologies.length > 8 ? (
+                    <button
+                      onClick={() => toggleExpand(index)}
+                      className="text-xs text-primary hover:text-primary/80 mt-2 underline"
+                    >
+                      {isExpanded ? "Show Less" : "Show More"}
+                    </button>
+                  ) : null}
+
+                  {/* GitHub Link */}
+                  {project.tag === "Internal" && (
+                    <Link
+                      href={project.github || "#"}
+                      target="_blank"
+                      className="text-primary text-md hover:text-primary/80 mt-3 inline-block"
+                    >
+                      View on GitHub
+                    </Link>
+                  )}
+                </div>
               </div>
-              {/* GitHub Link for Internal Projects */}
-              {project.tag === "Internal" && (
-                <Link
-                  href={project.github || "#"}
-                  target="_blank"
-                  className="text-primary hover:text-primary/80 mt-3 inline-block"
-                >
-                  View on GitHub
-                </Link>
-              )}
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
     </section>
   );
