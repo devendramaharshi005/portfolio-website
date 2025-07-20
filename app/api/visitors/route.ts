@@ -3,8 +3,7 @@ import { getVisitors, addVisitor } from "@/prisma-db";
 import { withCorsHeaders } from "@/lib/cors";
 
 export async function GET(req: Request) {
-
-  console.log(origin,"origin")
+  const origin = req.headers.get("origin");
 
   try {
     const visitors = await getVisitors();
